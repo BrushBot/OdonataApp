@@ -1,3 +1,4 @@
+//Require Dependancies
 var gulp = require('gulp');
 //var jshint = require('gulp-jshint');
 var jscs = require('gulp-jscs');
@@ -5,8 +6,11 @@ var nodemon = require('gulp-nodemon');
 var tsc = require('gulp-typescript');
 var tslint = require('gulp-tslint');
 var sass = require('gulp-sass');
+
+//TS Config File
 var tsProject = tsc.createProject('tsconfig.json');
 
+//Get All TypeScript Files
 var tsfiles = ['routes/*.ts'];
 var libraryTypeScriptDefinitions = 'typings/globals/**/*.ts';
 
@@ -36,13 +40,16 @@ gulp.task('compile-sass', function() {
     .pipe(gulp.dest('assets/css/'))
 });
 
+//Get All JS Files
 var jsFiles = ['*.js', 'src/**/*.js'];
 
+//Make JavaScript Files Pretty
 gulp.task('style', function() {
     return gulp.src(jsFiles)
      .pipe(jscs());
 });
 
+//Inject JS and CSS into views
 gulp.task('inject', function() {
     var wiredep = require('wiredep').stream;
     var inject = require('gulp-inject');
@@ -70,15 +77,17 @@ gulp.task('inject', function() {
      .pipe(gulp.dest('./views'));
 });
 
+//Gulp Runs All Dev Tasks
 gulp.task('dev', ['lint-ts', 'compile-ts', 'compile-sass', 'style', 'inject'], function(){
 
+});
 
-    });
-
+//Gulp Wathces for File Changes
 gulp.task('watch', ['dev'], function() {
 	gulp.watch('./assets/ts/**/*.ts', ['dev']);
 });
 
+//Run Both Dev and Watch Tasks
 gulp.task('serve', ['dev', 'watch'], function() {
 
         var options = {
