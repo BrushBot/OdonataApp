@@ -34,10 +34,16 @@ gulp.task('compile-ts', function()  {
 });
 
 //Compile Sass
-gulp.task('compile-sass', function() {
+gulp.task('compile-sass-bootstrap', function() {
     return gulp.src('assets/libraries/bootstrap-sass/**/*.scss')
     .pipe(sass())
     .pipe(gulp.dest('assets/css/'))
+});
+
+gulp.task('compile-sass-custom', function() {
+    return gulp.src('assets/scss/*.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('assets/css/custom/'))
 });
 
 //Get All JS Files
@@ -50,15 +56,15 @@ gulp.task('style', function() {
 });
 
 //Inject JS and CSS into views
-gulp.task('inject', function() {
+gulp.task('inject', ['lint-ts', 'compile-ts', 'compile-sass-bootstrap', 'compile-sass-custom', 'style'], function() {
     var wiredep = require('wiredep').stream;
     var inject = require('gulp-inject');
 
     var injectSrc = gulp.src([
      './assets/css/assets/**/*.css',
      './assets/libraries/font-awesome/css/font-awesome.css',
-     './assets/css/theme/*.css',
-     './assets/js/theme/*.js'
+     './assets/css/custom/*.css',
+     './assets/js/custom/*.js'
      ]);
 
     var injectOptions = {
@@ -78,7 +84,7 @@ gulp.task('inject', function() {
 });
 
 //Gulp Runs All Dev Tasks
-gulp.task('dev', ['lint-ts', 'compile-ts', 'compile-sass', 'style', 'inject'], function(){
+gulp.task('dev', ['inject'], function(){
 
 });
 
