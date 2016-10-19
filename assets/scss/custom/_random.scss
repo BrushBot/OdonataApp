@@ -1,0 +1,83 @@
+section {
+  padding: 100px 0;
+}
+section h2.section-heading {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 150px 0;
+  }
+}
+.service-heading {
+  margin: 15px 0;
+  text-transform: none;
+}
+aside.clients img {
+  margin: 50px auto;
+}
+section#add-entry .section-heading {
+  color: white;
+}
+section#add-entry .form-group {
+  margin-bottom: 25px;
+}
+section#add-entry .form-group input,
+section#add-entry .form-group textarea {
+  padding: 20px;
+}
+section#contact .form-group input.form-control {
+  height: auto;
+}
+section#add-entry .form-group textarea.form-control {
+  height: 236px;
+}
+section#add-entry .form-control:focus {
+  border-color: #6FB5D9;
+  box-shadow: none;
+}
+section#add-entry ::-webkit-input-placeholder {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #8D3B1E;
+}
+section#add-entry :-moz-placeholder {
+  /* Firefox 18- */
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #8D3B1E;
+}
+section#add-entry ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #8D3B1E;
+}
+section#add-entry :-ms-input-placeholder {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #8D3B1E;
+}
+section#add-entry .text-danger {
+  color: #e74c3c;
+}
+::selection {
+  text-shadow: none;
+  background: #6FB5D9;
+}
+img::selection {
+  background: transparent;
+}
+img::-moz-selection {
+  background: transparent;
+}
+body {
+  webkit-tap-highlight-color: #6FB5D9;
+}

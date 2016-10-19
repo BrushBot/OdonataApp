@@ -1,0 +1,51 @@
+body {
+  overflow-x: hidden;
+  font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.text-muted {
+  color: #8A8C84;
+}
+.text-primary {
+  color: #6FB5D9;
+}
+p {
+  font-size: 14px;
+  line-height: 1.75;
+}
+.text-large {
+  font-size: 18px;
+}
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+  outline: none;
+}
+a {
+  color: #3686AD;
+}
+a:hover,
+a:focus,
+a:active,
+a.active {
+  color: #6FB5D9;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.text-huge {
+  font-size: 48px;
+}
+
+.over-sized-icon {
+  font-size: 72px;
+}
