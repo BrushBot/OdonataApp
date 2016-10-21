@@ -69,9 +69,9 @@
 
     <section class="bg-tan">
         
-        <div class="container">
+        <div class="container" ng-app="NotebookApplication" ng-controller="NotebookController">
             <h1 class="text-huge xl-margin-bottom">Notebook</h1>
-            
+            <h2>{{ tagline }}</h2>
             <div class="row">
                 
                 <div class="col-sm-6 lg-margin-bottom">
@@ -204,6 +204,8 @@
     <script src="/js/custom/contact_me.js"></script>
     <script src="/js/custom/jqBootstrapValidation.js"></script>
     <!-- endinject -->
+
+    <script src="/js/App/Notebook/NotebookController.js"></script>
 
     <!-- Contact Form JavaScript -->
     <!--<script src="js/theme/jqBootstrapValidation.js"></script>
